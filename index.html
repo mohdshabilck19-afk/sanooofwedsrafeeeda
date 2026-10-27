@@ -305,37 +305,6 @@ img.src=I.photo;
 const aud=$("aud"), mb=$("music");
 if(I.music){aud.src=I.music;mb.style.display="block";}
 mb.onclick=()=>aud.paused?aud.play():aud.pause();
-// ---- wishes (saved in this browser; see note) ----
-(function(){
-  const KEY="wishes:"+I.groom+I.bride, wl=$("wl"), cnt=$("wcnt"), more=$("wmore");
-  let W=[],shown=6,liked={};
-  try{W=JSON.parse(localStorage.getItem(KEY)||"[]");liked=JSON.parse(localStorage.getItem(KEY+":h")||"{}")}catch(e){}
-  const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(W));localStorage.setItem(KEY+":h",JSON.stringify(liked))}catch(e){}};
-  const fmt=t=>new Date(t).toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
-  function card(w){
-    const d=document.createElement("div");d.className="wc";
-    const n=document.createElement("b");n.textContent=w.n;
-    const m=document.createElement("p");m.textContent="“"+w.m+"”";
-    const t=document.createElement("small");t.textContent=fmt(w.t);
-    const h=document.createElement("button");h.className="hb"+(liked[w.t]?" on":"");h.type="button";h.setAttribute("aria-label","Like");h.textContent=liked[w.t]?"♥":"♡";
-    h.onclick=()=>{liked[w.t]=!liked[w.t];h.classList.toggle("on",liked[w.t]);h.textContent=liked[w.t]?"♥":"♡";save()};
-    d.append(n,m,t,h);return d;
-  }
-  function render(){
-    wl.textContent="";
-    W.slice(0,shown).forEach(w=>wl.appendChild(card(w)));
-    cnt.textContent=W.length?W.length+" Wish"+(W.length>1?"es":"")+" & Blessings":"Be the first to send a blessing";
-    more.style.display=W.length>shown?"inline-block":"none";
-  }
-  $("wf").onsubmit=e=>{e.preventDefault();
-    const n=$("wn").value.trim(),m=$("wm").value.trim();if(!n||!m)return;
-    W.unshift({n,m,t:Date.now()});save();shown=Math.max(shown,6);render();e.target.reset();
-    const b=e.target.querySelector("button");const o=b.textContent;b.textContent="JazakAllah Khair ✦";setTimeout(()=>b.textContent=o,2200);
-  };
-  more.onclick=()=>{shown+=6;render()};
-  render();
-})();
-
 // music button state
 aud.addEventListener("play",()=>mb.classList.add("on"));aud.addEventListener("pause",()=>mb.classList.remove("on"));
 
@@ -387,6 +356,67 @@ if(!matchMedia("(prefers-reduced-motion:reduce)").matches){
       x.beginPath();x.fillStyle="rgba(214,176,98,"+(b.l*.18)+")";x.arc(b.x,b.y,b.r*3,0,7);x.fill()}
     requestAnimationFrame(f)})();
 }
+</script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, query, orderBy, limit, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCebPIdMjQhp8enb6BVisEn51h3trt-RL0",
+  authDomain: "planning-with-ai-24e81.firebaseapp.com",
+  projectId: "planning-with-ai-24e81",
+  storageBucket: "planning-with-ai-24e81.firebasestorage.app",
+  messagingSenderId: "874595477420",
+  appId: "1:874595477420:web:f3e83a16e9ba37adcdfc09"
+};
+const db = getFirestore(initializeApp(firebaseConfig));
+const col = collection(db, "wishes");
+
+const g = id => document.getElementById(id);
+const wl = g("wl"), cnt = g("wcnt"), more = g("wmore"), form = g("wf");
+const KEY = "wishes:likes";
+let W = [], shown = 6, liked = {};
+try { liked = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const saveLikes = () => { try { localStorage.setItem(KEY, JSON.stringify(liked)); } catch (e) {} };
+const fmt = t => new Date(t).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
+function card(w) {
+  const d = document.createElement("div"); d.className = "wc";
+  const n = document.createElement("b"); n.textContent = w.n;
+  const m = document.createElement("p"); m.textContent = "\u201c" + w.m + "\u201d";
+  const t = document.createElement("small"); t.textContent = fmt(w.t);
+  const h = document.createElement("button");
+  h.className = "hb" + (liked[w.id] ? " on" : ""); h.type = "button";
+  h.setAttribute("aria-label", "Like"); h.textContent = liked[w.id] ? "\u2665" : "\u2661";
+  h.onclick = () => { liked[w.id] = !liked[w.id]; h.classList.toggle("on", liked[w.id]); h.textContent = liked[w.id] ? "\u2665" : "\u2661"; saveLikes(); };
+  d.append(n, m, t, h); return d;
+}
+function render() {
+  wl.textContent = "";
+  W.slice(0, shown).forEach(w => wl.appendChild(card(w)));
+  cnt.textContent = W.length ? W.length + " Wish" + (W.length > 1 ? "es" : "") + " & Blessings" : "Be the first to send a blessing";
+  more.style.display = W.length > shown ? "inline-block" : "none";
+}
+
+onSnapshot(query(col, orderBy("t", "desc"), limit(200)), snap => {
+  W = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  render();
+}, err => { console.error(err); cnt.textContent = "Wishes could not be loaded right now"; });
+
+form.onsubmit = async e => {
+  e.preventDefault();
+  const n = g("wn").value.trim(), m = g("wm").value.trim();
+  if (!n || !m) return;
+  const b = form.querySelector("button"), o = b.textContent;
+  b.disabled = true;
+  try {
+    await addDoc(col, { n: n.slice(0, 40), m: m.slice(0, 300), t: Date.now() });
+    form.reset(); shown = Math.max(shown, 6);
+    b.textContent = "JazakAllah Khair \u2726";
+  } catch (err) { console.error(err); b.textContent = "Could not send, try again"; }
+  setTimeout(() => { b.textContent = o; b.disabled = false; }, 2200);
+};
+more.onclick = () => { shown += 6; render(); };
 </script>
 </body>
 </html>
