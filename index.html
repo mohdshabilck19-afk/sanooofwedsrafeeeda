@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reception Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#ede3cf;--card:#f4ecdc;--ink:#3a2a14;--gold:#9a7632;--soft:#8a7556}
+:root{--bg:#fdeff3;--card:#fff7f9;--ink:#5a3a47;--gold:#b8647f;--soft:#9b7483}
 *{box-sizing:border-box;margin:0}
 body{background:var(--bg);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;text-align:center;overflow-x:hidden}
 .ar{font-family:Amiri,"Traditional Arabic",serif;direction:rtl;color:var(--gold)}
@@ -18,16 +18,16 @@ section.hero{min-height:100vh;justify-content:center}
 .eyebrow{font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.9rem}
 .eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--gold)}
 h1,h2{font-weight:400;font-style:italic;line-height:1.1}
-h1{font-size:clamp(2.8rem,13vw,4.8rem);color:#5a4120}
+h1{font-size:clamp(2.8rem,13vw,4.8rem);color:#8f3f5e}
 h2{font-size:clamp(2rem,9vw,3rem)}
 h2 em{color:var(--gold)}
 .rule{width:200px;height:1px;background:var(--gold);opacity:.6}
 .stars{color:var(--gold);letter-spacing:.6em}
 .cap{font-size:.78rem;letter-spacing:.25em;text-transform:uppercase}
 .sm{font-size:.95rem;color:var(--soft);font-style:italic}
-.frame{border:1px solid var(--gold);background:rgba(255,250,240,.35);width:100%;max-width:420px}
-.tag{background:var(--gold);color:#f6efe0;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;padding:.35rem}
-.row{display:flex;gap:1.2rem;align-items:baseline;padding:.9rem 1.4rem;border-bottom:1px solid rgba(154,118,50,.4);text-align:left}
+.frame{border:1px solid var(--gold);background:rgba(255,255,255,.35);width:100%;max-width:420px}
+.tag{background:var(--gold);color:#fff5f8;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;padding:.35rem}
+.row{display:flex;gap:1.2rem;align-items:baseline;padding:.9rem 1.4rem;border-bottom:1px solid rgba(184,100,127,.4);text-align:left}
 .row span{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);min-width:3.2rem}
 .row b{font-weight:400;font-size:1.25rem}
 .btns{display:flex;gap:.5rem;padding:1.2rem 1.4rem}
@@ -38,28 +38,28 @@ h2 em{color:var(--gold)}
 .photo .none{height:100%;display:grid;place-items:center;color:var(--soft);font-style:italic;border:1px dashed var(--gold);padding:1rem}
 .fam{padding:2rem 1.2rem;display:flex;flex-direction:column;gap:.5rem}
 .fam h3{font-weight:400;font-style:italic;font-size:2rem}
-.fam .names{color:#6b4e1e;font-size:1.3rem}
-#cover{position:fixed;inset:0;z-index:20;background:radial-gradient(circle at 50% 50%,#f1e8d6,#e3d6bb);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;cursor:pointer;perspective:900px;transition:opacity 1s ease .1s,visibility 1s}
+.fam .names{color:#9a4a68;font-size:1.3rem}
+#cover{position:fixed;inset:0;z-index:20;background:radial-gradient(circle at 50% 50%,#fff3f7,#f9d9e3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.8rem;cursor:pointer;perspective:900px;transition:opacity 1s ease .1s,visibility 1s}
 #cover.open{opacity:0;visibility:hidden}
 #cover .eyebrow{transition:opacity .4s}
 #cover.opening .eyebrow{opacity:0}
-.env{position:relative;width:min(78vw,340px);aspect-ratio:3/2;background:linear-gradient(#f8f1e2,#efe4ce);border:1px solid #d8c8a6;box-shadow:0 18px 40px rgba(90,65,30,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform 1s cubic-bezier(.4,0,.2,1) .2s,box-shadow 1s;animation:floaty 4s ease-in-out infinite}
-.env::before{content:"";position:absolute;inset:8px;border:1px solid rgba(154,118,50,.6)}
+.env{position:relative;width:min(78vw,340px);aspect-ratio:3/2;background:linear-gradient(#fffafb,#fde9ef);border:1px solid #f3c9d5;border-radius:8px;box-shadow:0 18px 40px rgba(184,100,127,.28);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform 1s cubic-bezier(.4,0,.2,1) .2s,box-shadow 1s;animation:floaty 4s ease-in-out infinite}
+.env::before{content:"";position:absolute;inset:8px;border:1px solid rgba(184,100,127,.6)}
 @keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -6px}}
-.flap{position:absolute;left:-1px;right:-1px;top:-1px;height:58%;background:linear-gradient(#fcf7ea,#eadfc6);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;transition:transform .9s cubic-bezier(.5,0,.2,1) .45s;z-index:3}
+.flap{position:absolute;left:-1px;right:-1px;top:-1px;height:58%;background:linear-gradient(#fff6f8,#f9dde6);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;transition:transform .9s cubic-bezier(.5,0,.2,1) .45s;z-index:3}
 #cover.opening .flap{transform:rotateX(180deg)}
-.letter{position:absolute;left:10%;right:10%;top:12%;bottom:8%;background:#fbf6ea;border:1px solid rgba(154,118,50,.5);display:grid;place-items:center;font-size:1.5rem;opacity:0;transform:translateY(0);transition:opacity .5s ease 1s,transform .9s cubic-bezier(.3,.7,.2,1) 1.1s;z-index:1}
+.letter{position:absolute;left:10%;right:10%;top:12%;bottom:8%;background:#fffafb;border:1px solid rgba(184,100,127,.5);display:grid;place-items:center;font-size:1.5rem;opacity:0;transform:translateY(0);transition:opacity .5s ease 1s,transform .9s cubic-bezier(.3,.7,.2,1) 1.1s;z-index:1}
 #cover.opening .letter{opacity:1;transform:translateY(-34%)}
-.seal{position:absolute;top:55%;left:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e6c985,#9a7632 70%);display:grid;place-items:center;color:#3a2a14;font-size:1.1rem;box-shadow:0 3px 8px rgba(0,0,0,.3);z-index:4;transition:opacity .45s ease,transform .45s ease}
+.seal{position:absolute;top:55%;left:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd9e3,#c9708c 70%);display:grid;place-items:center;color:#fff;font-size:1.1rem;box-shadow:0 3px 8px rgba(0,0,0,.3);z-index:4;transition:opacity .45s ease,transform .45s ease}
 #cover.opening .seal{opacity:0;transform:scale(.5) rotate(-20deg)}
 .env .n{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;position:absolute;top:73%;z-index:2;white-space:nowrap}
-.env .d{position:absolute;bottom:8%;font-style:italic;color:#7a5a24;font-size:.85rem;z-index:2;white-space:nowrap}
+.env .d{position:absolute;bottom:8%;font-style:italic;color:#a8607b;font-size:.85rem;z-index:2;white-space:nowrap}
 #cover.opening .env{transform:translateY(-10px) scale(1.12)}
 #cover.open .env{transform:translateY(-30px) scale(1.25)}
-#music{position:fixed;right:14px;bottom:14px;z-index:15;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:#3a2a14;color:#e6c985;font-size:1.2rem;cursor:pointer;display:none}
+#music{position:fixed;right:14px;bottom:14px;z-index:15;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:#c9708c;color:#fff;font-size:1.2rem;cursor:pointer;display:none}
 .reveal>*{will-change:opacity,transform,filter}
 .photo{overflow:hidden}.photo img,.photo svg{will-change:transform}
-.top{position:fixed;top:0;left:0;right:0;z-index:6;background:linear-gradient(var(--bg) 40%,rgba(237,227,207,0));display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.1rem;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);pointer-events:none;opacity:0;transition:opacity 1.2s ease 2.2s}
+.top{position:fixed;top:0;left:0;right:0;z-index:6;background:linear-gradient(var(--bg) 40%,rgba(253,239,243,0));display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.1rem;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);pointer-events:none;opacity:0;transition:opacity 1.2s ease 2.2s}
 body.go .top{opacity:.9}
 .top .ar{font-size:1rem;letter-spacing:0}
 .hero{will-change:opacity,transform}
@@ -69,17 +69,17 @@ body.go .hero>*{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
 body.go .hero>*:nth-child(1){animation-delay:.9s}body.go .hero>*:nth-child(2){animation-delay:1.1s}body.go .hero>*:nth-child(3){animation-delay:1.3s}body.go .hero>*:nth-child(4){animation-delay:1.55s}body.go .hero>*:nth-child(5){animation-delay:1.85s}body.go .hero>*:nth-child(6){animation-delay:2.1s}body.go .hero>*:nth-child(7){animation-delay:2.3s}body.go .hero>*:nth-child(8){animation-delay:2.5s}body.go .hero>*:nth-child(9){animation-delay:2.7s}body.go .hero>*:nth-child(10){animation-delay:2.9s}
 @media(prefers-reduced-motion:reduce){.hero>*{opacity:1;transform:none;filter:none;transition:none;animation:none!important}.top{transition:none}#cover,.env,.flap,.letter,.seal{transition:none;animation:none}}
 
-.wish-form{padding:1.2rem;display:flex;flex-direction:column;gap:.7rem;background:rgba(255,250,240,.55)}
-.wish-form input,.wish-form textarea{width:100%;font:inherit;font-size:.95rem;font-style:italic;color:var(--ink);background:rgba(255,250,240,.7);border:1px solid rgba(154,118,50,.5);padding:.8rem .8rem;outline:none;resize:none;border-radius:0}
-.wish-form input:focus,.wish-form textarea:focus{border-color:var(--gold);background:#fffaf0}
+.wish-form{padding:1.2rem;display:flex;flex-direction:column;gap:.7rem;background:rgba(255,255,255,.55)}
+.wish-form input,.wish-form textarea{width:100%;font:inherit;font-size:.95rem;font-style:italic;color:var(--ink);background:rgba(255,255,255,.7);border:1px solid rgba(184,100,127,.5);padding:.8rem .8rem;outline:none;resize:none;border-radius:0}
+.wish-form input:focus,.wish-form textarea:focus{border-color:var(--gold);background:#ffffff}
 .wish-form ::placeholder{color:var(--soft);opacity:.8}
-.wish-form button{border:0;background:var(--gold);color:#f6efe0;font:inherit;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;padding:1rem;cursor:pointer;transition:background .3s,transform .2s}
-.wish-form button:hover{background:#85652a}.wish-form button:active{transform:scale(.98)}
+.wish-form button{border:0;background:var(--gold);color:#fff5f8;font:inherit;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;padding:1rem;cursor:pointer;transition:background .3s,transform .2s}
+.wish-form button:hover{background:#a24f6b}.wish-form button:active{transform:scale(.98)}
 .wcount{font-size:.65rem;letter-spacing:.2em;color:var(--gold);margin-top:.4rem}
 .wlist{width:100%;max-width:420px;display:flex;flex-direction:column;gap:.7rem}
-.wc{text-align:left;background:rgba(255,250,240,.5);border-left:2px solid var(--gold);padding:1rem 1.1rem;position:relative;animation:wIn .8s cubic-bezier(.2,.7,.2,1) both}
+.wc{text-align:left;background:rgba(255,255,255,.5);border-left:2px solid var(--gold);padding:1rem 1.1rem;position:relative;animation:wIn .8s cubic-bezier(.2,.7,.2,1) both}
 @keyframes wIn{from{opacity:0;transform:translateY(14px);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
-.wc b{display:block;font-weight:600;font-style:italic;color:#6b4e1e;font-size:1.05rem}
+.wc b{display:block;font-weight:600;font-style:italic;color:#9a4a68;font-size:1.05rem}
 .wc p{font-style:italic;font-size:.95rem;color:var(--soft);margin:.3rem 0 .5rem;white-space:pre-wrap;word-break:break-word}
 .wc small{font-size:.65rem;letter-spacing:.15em;color:var(--soft);opacity:.8}
 .wc .hb{position:absolute;right:.9rem;bottom:.8rem;background:none;border:0;color:var(--gold);font-size:1rem;cursor:pointer;line-height:1;transition:transform .25s}
@@ -88,6 +88,29 @@ body.go .hero>*:nth-child(1){animation-delay:.9s}body.go .hero>*:nth-child(2){an
 #music.on{animation:spin 6s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.wc{animation:none}#music.on{animation:none}}
+
+/* ---- pastel pink theme ---- */
+body{background:linear-gradient(180deg,#fff4f7 0%,#fde6ed 45%,#fff1f5 100%) fixed}
+h1,h2,.fam h3{font-family:"Great Vibes","Cormorant Garamond",cursive;font-style:normal;font-weight:400;line-height:1.15}
+h1{font-size:clamp(3rem,14vw,5rem)}
+h2{font-size:clamp(2.2rem,10vw,3.3rem)}
+h2 em{font-style:normal}
+.fam h3{font-size:2.5rem}
+.eyebrow,.cap,.tag,.row span,.btn,.env .n,.wcount,.wcnt,.top,.wish-form button{font-family:Jost,"Cormorant Garamond",sans-serif;font-weight:300}
+.frame{border-radius:20px;border-color:rgba(184,100,127,.45);background:rgba(255,255,255,.55);box-shadow:0 12px 34px rgba(184,100,127,.14);overflow:hidden}
+.tag{background:linear-gradient(90deg,#e79ab3,#c9708c)}
+.row{border-bottom-color:rgba(184,100,127,.25)}
+.btn{border-radius:30px;font-weight:400}
+.photo{border-radius:999px 999px 18px 18px;padding:10px;background:linear-gradient(#fff,#fde4ec);box-shadow:0 14px 36px rgba(184,100,127,.2)}
+.photo img,.photo svg{border-radius:999px 999px 10px 10px}
+.wish-form input,.wish-form textarea{border-radius:12px}
+.wish-form button{border-radius:30px;background:linear-gradient(90deg,#e79ab3,#c9708c)}
+.wc{border-radius:14px;border-left:3px solid #e79ab3;background:rgba(255,255,255,.7);box-shadow:0 6px 18px rgba(184,100,127,.1)}
+.stars{color:#e79ab3}
+.rule{background:linear-gradient(90deg,transparent,#e79ab3,transparent);height:1px;opacity:1}
+#cover .eyebrow{font-family:Jost,sans-serif}
+.env .d{font-family:"Cormorant Garamond",serif}
+.env .n{font-size:.62rem}
 </style>
 </head>
 <body>
@@ -137,7 +160,7 @@ const I = {
   <p class="sm" style="font-size:.85rem">In the name of Allah, the Most Gracious, the Most Merciful</p>
   <div class="rule" style="margin:.8rem 0"></div>
   <h1 id="g"></h1>
-  <p class="stars" style="letter-spacing:.3em">✦ <span style="font-style:italic;letter-spacing:0;color:var(--gold)">weds</span> ✦</p>
+  <p class="stars" style="letter-spacing:.3em">✦ <span style="font-family:'Great Vibes',cursive;font-size:2rem;letter-spacing:0;color:var(--gold)">weds</span> ✦</p>
   <h1 id="b"></h1>
   <p class="stars">✦ ✦ ✦</p>
   <p class="cap" id="hd"></p>
@@ -213,61 +236,61 @@ const I = {
   <p class="sm">May Allah bless you both</p>
   <p class="sm">With love and du’a from<br>The Families of <span id="ft1"></span> &amp; <span id="ft2"></span></p>
   <div class="rule"></div>
-  <p style="font-size:2rem;font-style:italic;color:#6b4e1e;margin-top:.6rem" id="sig"></p>
+  <p style="font-family:'Great Vibes',cursive;font-size:2.4rem;font-style:normal;color:#9a4a68;margin-top:.6rem" id="sig"></p>
   <p class="cap" style="font-size:.65rem;color:var(--soft)" id="sigd"></p>
 </section>
 </main>
 
 <template id="art">
 <svg viewBox="0 0 320 400" width="100%" height="100%" role="img" aria-label="Illustration of a smiling Muslim couple holding hands under a mosque arch" xmlns="http://www.w3.org/2000/svg">
-  <rect width="320" height="400" fill="#f3e9d3"/>
-  <path d="M30 400V190Q30 62 160 30Q290 62 290 190V400Z" fill="#f8f1e2" stroke="#9a7632" stroke-width="2"/>
-  <path d="M44 400V192Q44 80 160 50Q276 80 276 192V400Z" fill="none" stroke="#c9a45c" stroke-width="1" stroke-dasharray="3 4"/>
-  <circle cx="160" cy="88" r="13" fill="#c9a45c"/><circle cx="166" cy="84" r="11" fill="#f8f1e2"/>
-  <path d="M183 72l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z" fill="#c9a45c"/>
-  <g fill="#e9dcc0" stroke="#d3bf92"><rect x="62" y="190" width="12" height="170"/><path d="M62 190l6-24 6 24z"/><rect x="246" y="190" width="12" height="170"/><path d="M246 190l6-24 6 24z"/></g>
-  <g stroke="#9a7632" stroke-width="1.5"><path d="M82 0v92M238 0v92"/></g>
-  <g><circle cx="82" cy="118" r="26" fill="#e6c985" opacity=".3"/><rect x="72" y="92" width="20" height="36" rx="4" fill="#e6c985" stroke="#9a7632"/><path d="M70 92l12-12 12 12z" fill="#9a7632"/></g>
-  <g><circle cx="238" cy="118" r="26" fill="#e6c985" opacity=".3"/><rect x="228" y="92" width="20" height="36" rx="4" fill="#e6c985" stroke="#9a7632"/><path d="M226 92l12-12 12 12z" fill="#9a7632"/></g>
-  <ellipse cx="160" cy="364" rx="120" ry="9" fill="#d8c8a6" opacity=".6"/>
+  <rect width="320" height="400" fill="#fdeaf0"/>
+  <path d="M30 400V190Q30 62 160 30Q290 62 290 190V400Z" fill="#fff6f8" stroke="#b8647f" stroke-width="2"/>
+  <path d="M44 400V192Q44 80 160 50Q276 80 276 192V400Z" fill="none" stroke="#e79ab3" stroke-width="1" stroke-dasharray="3 4"/>
+  <circle cx="160" cy="88" r="13" fill="#e79ab3"/><circle cx="166" cy="84" r="11" fill="#fff6f8"/>
+  <path d="M183 72l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z" fill="#e79ab3"/>
+  <g fill="#f7d5df" stroke="#eab9c8"><rect x="62" y="190" width="12" height="170"/><path d="M62 190l6-24 6 24z"/><rect x="246" y="190" width="12" height="170"/><path d="M246 190l6-24 6 24z"/></g>
+  <g stroke="#b8647f" stroke-width="1.5"><path d="M82 0v92M238 0v92"/></g>
+  <g><circle cx="82" cy="118" r="26" fill="#f9cdd9" opacity=".3"/><rect x="72" y="92" width="20" height="36" rx="4" fill="#f9cdd9" stroke="#b8647f"/><path d="M70 92l12-12 12 12z" fill="#b8647f"/></g>
+  <g><circle cx="238" cy="118" r="26" fill="#f9cdd9" opacity=".3"/><rect x="228" y="92" width="20" height="36" rx="4" fill="#f9cdd9" stroke="#b8647f"/><path d="M226 92l12-12 12 12z" fill="#b8647f"/></g>
+  <ellipse cx="160" cy="364" rx="120" ry="9" fill="#f1c3d0" opacity=".6"/>
   <!-- groom -->
   <g>
-    <rect x="96" y="300" width="26" height="58" fill="#d9c9a3"/><rect x="128" y="300" width="26" height="58" fill="#d9c9a3"/>
+    <rect x="96" y="300" width="26" height="58" fill="#f3d3dc"/><rect x="128" y="300" width="26" height="58" fill="#f3d3dc"/>
     <ellipse cx="109" cy="360" rx="17" ry="6" fill="#3a2a14"/><ellipse cx="141" cy="360" rx="17" ry="6" fill="#3a2a14"/>
-    <path d="M92 190Q125 178 158 190L166 304H84Z" fill="#efe4cc" stroke="#c9b68a"/>
-    <path d="M125 186V304" stroke="#c9b68a"/>
-    <g fill="#c9a45c"><circle cx="119" cy="210" r="2.5"/><circle cx="119" cy="235" r="2.5"/><circle cx="119" cy="260" r="2.5"/><circle cx="119" cy="285" r="2.5"/></g>
-    <path d="M92 192L88 286" stroke="#efe4cc" stroke-width="15" stroke-linecap="round"/>
+    <path d="M92 190Q125 178 158 190L166 304H84Z" fill="#fff3f6" stroke="#e8b9c7"/>
+    <path d="M125 186V304" stroke="#e8b9c7"/>
+    <g fill="#e79ab3"><circle cx="119" cy="210" r="2.5"/><circle cx="119" cy="235" r="2.5"/><circle cx="119" cy="260" r="2.5"/><circle cx="119" cy="285" r="2.5"/></g>
+    <path d="M92 192L88 286" stroke="#fff3f6" stroke-width="15" stroke-linecap="round"/>
     <circle cx="88" cy="292" r="6.5" fill="#e3b184"/>
-    <path d="M156 194L172 288" stroke="#efe4cc" stroke-width="15" stroke-linecap="round"/>
+    <path d="M156 194L172 288" stroke="#fff3f6" stroke-width="15" stroke-linecap="round"/>
     <path d="M101 150Q103 184 125 186Q147 184 149 150Q140 168 125 168Q110 168 101 150Z" fill="#3a2a14"/>
     <rect x="118" y="170" width="14" height="16" fill="#e3b184"/>
     <circle cx="125" cy="150" r="26" fill="#e3b184"/>
-    <path d="M100 138Q100 110 125 110Q150 110 150 138Z" fill="#f6efe0" stroke="#9a7632"/>
-    <path d="M100 134H150" stroke="#c9a45c" stroke-width="3"/>
+    <path d="M100 138Q100 110 125 110Q150 110 150 138Z" fill="#fff5f8" stroke="#b8647f"/>
+    <path d="M100 134H150" stroke="#e79ab3" stroke-width="3"/>
     <circle cx="116" cy="150" r="2.2" fill="#3a2a14"/><circle cx="134" cy="150" r="2.2" fill="#3a2a14"/>
     <path d="M116 160Q125 169 134 160" stroke="#3a2a14" stroke-width="2" fill="none" stroke-linecap="round"/>
   </g>
   <!-- bride -->
   <g transform="translate(15 0)">
-    <path d="M172 238Q200 228 228 238L246 358H154Z" fill="#a9b8a0" stroke="#8a9c82"/>
-    <path d="M154 350H246M180 262Q200 270 220 262" stroke="#c9a45c" stroke-width="2.5" fill="none"/>
-    <path d="M222 244L232 300" stroke="#a9b8a0" stroke-width="13" stroke-linecap="round"/>
+    <path d="M172 238Q200 228 228 238L246 358H154Z" fill="#f4b6c8" stroke="#d88ba4"/>
+    <path d="M154 350H246M180 262Q200 270 220 262" stroke="#e79ab3" stroke-width="2.5" fill="none"/>
+    <path d="M222 244L232 300" stroke="#f4b6c8" stroke-width="13" stroke-linecap="round"/>
     <circle cx="232" cy="306" r="6" fill="#e3b184"/>
-    <path d="M180 246L157 288" stroke="#a9b8a0" stroke-width="13" stroke-linecap="round"/>
-    <path d="M170 172Q170 128 200 128Q230 128 230 172Q230 216 224 244H176Q170 216 170 172Z" fill="#a9b8a0" stroke="#8a9c82"/>
+    <path d="M180 246L157 288" stroke="#f4b6c8" stroke-width="13" stroke-linecap="round"/>
+    <path d="M170 172Q170 128 200 128Q230 128 230 172Q230 216 224 244H176Q170 216 170 172Z" fill="#f4b6c8" stroke="#d88ba4"/>
     <ellipse cx="200" cy="170" rx="17" ry="20" fill="#e3b184"/>
     <circle cx="193" cy="167" r="2" fill="#3a2a14"/><circle cx="207" cy="167" r="2" fill="#3a2a14"/>
     <circle cx="188" cy="175" r="4" fill="#e8a08a" opacity=".45"/><circle cx="212" cy="175" r="4" fill="#e8a08a" opacity=".45"/>
     <path d="M194 177Q200 183 206 177" stroke="#3a2a14" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-    <path d="M176 140Q200 122 224 140" stroke="#c9a45c" stroke-width="2.5" fill="none"/>
+    <path d="M176 140Q200 122 224 140" stroke="#e79ab3" stroke-width="2.5" fill="none"/>
   </g>
   <circle cx="172" cy="290" r="6.5" fill="#e3b184"/>
   <!-- flowers -->
   <g><ellipse cx="52" cy="352" rx="14" ry="6" fill="#8aa078" transform="rotate(-25 52 352)"/><ellipse cx="74" cy="354" rx="14" ry="6" fill="#8aa078" transform="rotate(20 74 354)"/>
-  <g fill="#f6efe0" stroke="#cdbb94"><circle cx="56" cy="342" r="7"/><circle cx="70" cy="346" r="6"/><circle cx="48" cy="354" r="6"/></g></g>
+  <g fill="#fff5f8" stroke="#eab9c8"><circle cx="56" cy="342" r="7"/><circle cx="70" cy="346" r="6"/><circle cx="48" cy="354" r="6"/></g></g>
   <g><ellipse cx="268" cy="352" rx="14" ry="6" fill="#8aa078" transform="rotate(25 268 352)"/><ellipse cx="246" cy="354" rx="14" ry="6" fill="#8aa078" transform="rotate(-20 246 354)"/>
-  <g fill="#f6efe0" stroke="#cdbb94"><circle cx="264" cy="342" r="7"/><circle cx="250" cy="346" r="6"/><circle cx="272" cy="354" r="6"/></g></g>
+  <g fill="#fff5f8" stroke="#eab9c8"><circle cx="264" cy="342" r="7"/><circle cx="250" cy="346" r="6"/><circle cx="272" cy="354" r="6"/></g></g>
 </svg>
 </template>
 
@@ -351,10 +374,10 @@ if(!matchMedia("(prefers-reduced-motion:reduce)").matches){
   addEventListener("touchstart",mv,{passive:true});addEventListener("touchmove",mv,{passive:true});addEventListener("pointermove",e=>{if(e.pointerType==="mouse")mv(e)});
   (function f(){t+=.02;x.clearRect(0,0,W,H);P.forEach(p=>{p.y-=p.v;p.x+=Math.sin(t+p.ph)*p.sw;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}
     const tw=.6+.4*Math.sin(t*2+p.ph);
-    x.beginPath();x.fillStyle="rgba(154,118,50,"+(p.a*tw)+")";x.arc(p.x,p.y,p.r,0,7);x.fill()});
+    x.beginPath();x.fillStyle="rgba(214,120,150,"+(p.a*tw)+")";x.arc(p.x,p.y,p.r,0,7);x.fill()});
     for(let i=B.length-1;i>=0;i--){const b=B[i];b.x+=b.vx;b.y+=b.vy;b.vx*=.97;b.vy=b.vy*.97+.02;b.l-=b.d;if(b.l<=0){B.splice(i,1);continue}
-      x.beginPath();x.fillStyle="rgba(176,134,52,"+(b.l*.7)+")";x.arc(b.x,b.y,b.r*(.5+b.l*.5),0,7);x.fill();
-      x.beginPath();x.fillStyle="rgba(214,176,98,"+(b.l*.18)+")";x.arc(b.x,b.y,b.r*3,0,7);x.fill()}
+      x.beginPath();x.fillStyle="rgba(224,130,160,"+(b.l*.7)+")";x.arc(b.x,b.y,b.r*(.5+b.l*.5),0,7);x.fill();
+      x.beginPath();x.fillStyle="rgba(244,170,195,"+(b.l*.18)+")";x.arc(b.x,b.y,b.r*3,0,7);x.fill()}
     requestAnimationFrame(f)})();
 }
 </script>
