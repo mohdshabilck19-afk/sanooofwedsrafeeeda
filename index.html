@@ -95,7 +95,8 @@ body.go .hero>*:nth-child(1){animation-delay:.9s}body.go .hero>*:nth-child(2){an
 <!-- ============ EDIT YOUR DETAILS HERE ============ -->
 <script>
 const I = {
-  groom: "Sanoof",
+  groom: "Muhammed Shanoof",
+  groomShort: "Shanoof",
   bride: "Rafeedha",
   event: "Reception",
   dateText: "Saturday, 21 November 2026",
@@ -276,7 +277,7 @@ const I = {
 <script>
 const $=id=>document.getElementById(id);
 const first=n=>n.split(" ")[0];
-$("cvN").textContent=first(I.groom)+"  ·  "+first(I.bride);
+$("cvN").textContent=I.groomShort+"  ·  "+first(I.bride);
 $("cvD").textContent=I.event+" Invitation · "+I.dateShort;
 $("tr").textContent=I.dateShort.split(" ").slice(1).join(" ").toUpperCase().replace(" "," · ");
 $("g").textContent=I.groom; $("b").textContent=I.bride;
@@ -288,8 +289,8 @@ $("dVen").textContent=I.venue; $("dArea").textContent=I.area;
 $("fg").textContent=I.groom; $("fb").textContent=I.bride;
 $("fgp").textContent=I.groomParents; $("fgh").textContent=I.groomHome;
 $("fbp").textContent=I.brideParents; $("fbh").textContent=I.brideHome;
-$("ft1").textContent=first(I.groom); $("ft2").textContent=first(I.bride);
-$("sig").textContent=first(I.groom)+" & "+first(I.bride);
+$("ft1").textContent=I.groom; $("ft2").textContent=first(I.bride);
+$("sig").textContent=I.groom+" & "+first(I.bride);
 $("sigd").textContent=I.dateShort+" · "+I.venue+", "+I.area.split(",")[0];
 document.title=I.groom+" & "+I.bride+" | "+I.event+" Invitation";
 
